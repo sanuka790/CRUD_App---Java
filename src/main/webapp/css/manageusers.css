@@ -1,0 +1,167 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Heading styles */
+h2 {
+    color: #0254ef;  /* Blue color */
+    margin-top: 30px;
+    font-size: 2.5rem;
+}
+
+/* Subheading styles */
+h3 {
+    color: #b80000;  /* Red color */
+    font-size: 1.8rem;
+}
+
+/* Form styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    animation: formSlideIn 1s ease-out;
+}
+
+/* Label and input field styling */
+label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #0254ef;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background-color: #1a77ff;
+    transform: scale(1.05);
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: tableSlideIn 1s ease-out;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #b80000;  /* Red color */
+    color: white;
+}
+
+td {
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Profile picture */
+img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: #0254ef;  /* Blue color */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for form */
+@keyframes formSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation for table */
+@keyframes tableSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    table {
+        width: 90%;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"], input[type="password"], input[type="file"], input[type="submit"] {
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}

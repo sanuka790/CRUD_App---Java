@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sanuka Wasala
-  Date: 3/10/2025
-  Time: 12:16 PM
-  To change this template use File | Settings | File Templates.
---%>
 
 <%@ page import="java.sql.*, java.util.*" %>
 <%@ page import="org.example.demo1.DBConnection" %>
@@ -14,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/userlist.css">
     <title>All Users</title>
 </head>
 <body>
@@ -27,11 +20,12 @@
         <th>ID</th>
         <th>Username</th>
         <th>Password</th>
+        <th>Profile Picture</th>
     </tr>
     </thead>
     <tbody>
     <%
-        // Fetch all users from the database and display them
+
         try (Connection conn = DBConnection.getConnection()) {
             String query = "SELECT * FROM users";
             try (PreparedStatement stmt = conn.prepareStatement(query);
@@ -46,6 +40,10 @@
         <td><%= id %></td>
         <td><%= username %></td>
         <td><%= password %></td>
+        <td>
+            <img src="getProfilePicture?id=<%= id %>" width="50" height="50"  alt="*"/>
+        </td>
+
     </tr>
     <%
                 }
@@ -58,10 +56,11 @@
 </table>
 
 <br>
-<a href="index.jsp">Go back to login</a>
+<a href="index.jsp" class="button">Go back to login</a>
 
 <br>
-<a href="manageUsers.jsp">Manage Users</a>
+<a href="manageUsers.jsp" class="button">Manage Users</a>
+
 
 
 </body>

@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/manageusers.css">
     <title>Manage Users</title>
 </head>
 <body>
@@ -23,12 +23,15 @@
 
 <!-- Form to create a new user -->
 <h3>Create New User</h3>
-<form action="createUser" method="post">
+<form action="createUser" method="post" enctype="multipart/form-data">
     <label for="username">Username:</label><br>
     <input type="text" id="username" name="username" required><br><br>
 
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password" required><br><br>
+
+    <label for="profilePicture">Profile Picture:</label><br>
+    <input type="file" id="profilePicture" name="profilePicture" accept="image/*"><br><br>
 
     <input type="submit" value="Create User">
 </form>
@@ -43,6 +46,7 @@
         <th>ID</th>
         <th>Username</th>
         <th>Password</th>
+        <th>Profile Picture</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -57,11 +61,18 @@
                     int id = rs.getInt("id");
                     String username = rs.getString("username");
                     String password = rs.getString("password");
+                    String profilePicture = rs.getString("profile_picture"); // The path to the profile picture
     %>
     <tr>
         <td><%= id %></td>
         <td><%= username %></td>
         <td><%= password %></td>
+        <td>
+
+            <img src="getProfilePicture?id=<%= id %>" width="50" height="50"  alt="*"/>
+        </td>
+
+
         <td>
             <!-- Link to update user -->
             <a href="updateUserForm.jsp?id=<%= id %>">Update</a> |
@@ -73,7 +84,7 @@
                 }
             }
         } catch (SQLException e) {
-            out.println("Error fetching data: " + e.getMessage());
+            out.println("Error fetching data - " + e.getMessage());
         }
     %>
     </tbody>
@@ -84,4 +95,3 @@
 
 </body>
 </html>
-

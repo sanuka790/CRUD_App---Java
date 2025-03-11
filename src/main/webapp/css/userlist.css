@@ -1,0 +1,147 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading Styles */
+h2 {
+    text-align: center;
+    color: #0254ef;  /* Blue color */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: tableFadeIn 1s ease-in-out;
+}
+
+/* Table Header Styling */
+th {
+    background-color: #b80000;  /* Red color */
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table Data Styling */
+td {
+    background-color: white;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Table Row Hover Effect */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Image Styling for Profile Picture */
+img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Links Styling */
+a {
+    text-decoration: none;
+    color: #0254ef;  /* Blue color */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Links Styling */
+br {
+    margin: 10px 0;
+}
+
+/* Animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for table */
+@keyframes tableFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    td, th {
+        padding: 10px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Style for the links to make them look like buttons */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0254ef;  /* Blue color */
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #1a77ff;  /* Lighter blue on hover */
+    transform: scale(1.05);  /* Slightly enlarge on hover */
+}
+
+.button:active {
+    background-color: #003f89;  /* Darker blue when clicked */
+    transform: scale(1);  /* Reset scale on click */
+}
+
+.button:focus {
+    outline: none;
+}
