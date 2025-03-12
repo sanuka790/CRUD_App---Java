@@ -1,92 +1,104 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #333;
-    animation: fadeIn 1s ease-in-out;
+    margin: 0;
+    padding: 0;
 }
 
-
-h2 {
-    text-align: center;
-    color: #b80000;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    animation: slideUp 1s ease-out;
-}
-
-/* Form Styling */
-form {
+/* Login container */
+.login-container {
     background-color: #fff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    animation: formFadeIn 1s ease-out;
+    max-width: 400px;
+    animation: slideIn 1s ease-out;
 }
 
-/* Input Field Styling */
+/* Heading */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Input container styling */
+.input-container {
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Input fields styling */
 input[type="text"], input[type="password"] {
     width: 100%;
     padding: 12px;
-    margin: 8px 0 16px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
-/* Input Fields Focus Effect */
 input[type="text"]:focus, input[type="password"]:focus {
-    border-color: #0254ef;
+    border-color: #0254ef; /* Blue color for focus */
     outline: none;
+    box-shadow: 0 0 8px rgba(2, 84, 239, 0.3);
 }
 
-/* Submit Button Styling */
-input[type="submit"] {
+/* Submit button styling */
+.submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #0254ef;
+    background-color: #0254ef; /* Blue color */
     border: none;
-    border-radius: 4px;
-    color: white;
-    font-size: 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s ease-in-out;
 }
 
-input[type="submit"]:hover {
-    background-color: #0254ef;
+.submit-btn:hover {
+    background-color: #1a77ff; /* Lighter blue on hover */
     transform: scale(1.05);
 }
 
-/* Label Styling */
-label {
-    font-size: 1.2rem;
+.submit-btn:active {
+    background-color: #003f89; /* Darker blue when clicked */
+    transform: scale(1);
 }
 
-/* Animation for form */
-@keyframes formFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
+/* Responsive Design for smaller devices */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"], input[type="password"], .submit-btn {
+        padding: 10px;
     }
 }
 
-/* Animation for slide up header */
-@keyframes slideUp {
+/* Slide-in animation for the form */
+@keyframes slideIn {
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -94,26 +106,5 @@ label {
     100% {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* Fade-in animation for body */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    form {
-        padding: 20px;
-    }
-
-    input[type="text"], input[type="password"], input[type="submit"] {
-        padding: 10px;
     }
 }

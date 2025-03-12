@@ -9,16 +9,22 @@
     <title>Login</title>
 </head>
 <body>
-<h2>Login Page</h2>
+<div class="login-container">
+    <h2>Login Page</h2>
 
-<form action="login" method="post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required><br><br>
+    <form action="login" method="post">
+        <div class="input-container">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+        </div>
 
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+        <div class="input-container">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
 
-    <input type="submit" value="Login">
-</form>
+        <input type="submit" value="Login" class="submit-btn">
+    </form>
+</div>
 </body>
 </html>
